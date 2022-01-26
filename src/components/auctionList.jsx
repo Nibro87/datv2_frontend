@@ -4,6 +4,19 @@ import facade from "./login/loginFacade";
 import { Button,Card,CloseButton, Table } from 'react-bootstrap';
 
 
+const onDelete = (id) =>{
+  console.log(id)
+  const options = facade.makeOptions("DELETE", true);
+  fetch(SERVER_URL + `/auction/delete/${id}`,options).then((res) =>
+  facade.handleHttpErrors(res))
+  .then((data) => console.log(data));
+  
+  
+  
+  }
+
+
+
 function Auctionlist(){
 
     const [list,setList] = useState([]);
@@ -55,13 +68,14 @@ function Auctionlist(){
        (
       
        <tr key = {item.id}>
+         
           
           <td>{item.name}</td>
           <td>{item.date}</td>
           <td>{item.time}</td>
           <td>{item.location}</td>
           
-    
+          <CloseButton aria-label="Hide" onClick= {() => onDelete(item.id)} />
         </tr>
         
          ))}
