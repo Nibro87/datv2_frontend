@@ -2,6 +2,8 @@ import React, { useState,useEffect } from "react"
 import Navbar from 'react-bootstrap/Navbar'
 import './style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Auctionlist from "../auctionList";
+import CreateAuction from "../createAuction";
 import {
     BrowserRouter as Router,
     Switch,   
@@ -28,9 +30,9 @@ import {
 <Navbar className='container nav left-align'>
 
 <li><NavLink  to='/'>Casmag</NavLink></li>
-<li><NavLink  to='/Trips'>Trips</NavLink></li>
+<li><NavLink  to='/Trips'>Auctions</NavLink></li>
 <li><NavLink to='/Guides' >Guides</NavLink></li>
-<li><NavLink to='/Createtrips'>Create Trips</NavLink></li>
+<li><NavLink to='/Createauctions'>Create Auction</NavLink></li>
 <li><NavLink to='/Createguides'>Create Guide</NavLink></li>
 
 
@@ -47,9 +49,9 @@ import {
       <Route exact path="/">
        
       </Route>
-    <Route path="/Trips"  />
+    <Route path="/Trips" element = {<Auctionlist/>} />
       <Route path="/Guides" />
-      <Route path="/Createtrips"  />
+      <Route path="/Createauctions" element = { <CreateAuction/>} />
       <Route path="/Createguides" />
     </Routes>
 
