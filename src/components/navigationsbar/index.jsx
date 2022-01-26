@@ -4,6 +4,7 @@ import './style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Auctionlist from "../auctionList";
 import CreateAuction from "../createAuction";
+import Myboats from "../ownerboats";
 import {
     BrowserRouter as Router,
     Switch,   
@@ -30,8 +31,8 @@ import {
 <Navbar className='container nav left-align'>
 
 <li><NavLink  to='/'>Casmag</NavLink></li>
-<li><NavLink  to='/Trips'>Auctions</NavLink></li>
-<li><NavLink to='/Guides' >Guides</NavLink></li>
+<li><NavLink  to='/Auctions'>Auctions</NavLink></li>
+<li><NavLink to='/myboats' >My Boats</NavLink></li>
 <li><NavLink to='/Createauctions'>Create Auction</NavLink></li>
 <li><NavLink to='/Createguides'>Create Guide</NavLink></li>
 
@@ -49,8 +50,8 @@ import {
       <Route exact path="/">
        
       </Route>
-    <Route path="/Trips" element = {<Auctionlist/>} />
-      <Route path="/Guides" />
+    <Route path="/Auctions" element = {<Auctionlist/>} />
+      <Route path="/myboats" element = {<Myboats/>}/>
       <Route path="/Createauctions" element = { <CreateAuction/>} />
       <Route path="/Createguides" />
     </Routes>
